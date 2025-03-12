@@ -59,7 +59,7 @@ export function Team() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="text-5xl font-bold text-center mb-16"
+        className="text-5xl font-bold text-center"
       >
         Our Team
       </motion.h2>
