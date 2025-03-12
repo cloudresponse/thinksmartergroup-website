@@ -80,7 +80,7 @@ export function ContactForm() {
                   <Input
                     placeholder="Jane Smith"
                     {...field}
-                    className="bg-gray-50 border-0 h-12 text-base"
+                    className="bg-gray-100 border-0 h-12 text-base"
                   />
                 </FormControl>
                 <FormMessage />
@@ -98,7 +98,7 @@ export function ContactForm() {
                     placeholder="jane@framer.com"
                     type="email"
                     {...field}
-                    className="bg-gray-50 border-0 h-12 text-base"
+                    className="bg-gray-100 border-0 h-12 text-base"
                   />
                 </FormControl>
                 <FormMessage />
@@ -115,7 +115,7 @@ export function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="Your message..."
-                  className="min-h-[150px] bg-gray-50 border-0 text-base resize-none"
+                  className="min-h-[150px] bg-gray-100 border-0 text-base resize-none"
                   {...field}
                 />
               </FormControl>
