@@ -31,7 +31,7 @@ export function ServiceCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <CardContent className="p-6">
+      <CardContent className="">
         <CardTitle className="text-2xl font-semibold mb-2">{title}</CardTitle>
         <p className="text-muted-foreground">{description}</p>
       </CardContent>
