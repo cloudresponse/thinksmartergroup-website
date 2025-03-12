@@ -93,8 +93,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Think Smarter Group. All rights
-            reserved.
+            © 2025 Think Smarter Group. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground mt-4 md:mt-0">
             Made by{" "}
