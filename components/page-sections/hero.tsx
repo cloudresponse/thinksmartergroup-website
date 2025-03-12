@@ -4,6 +4,12 @@ import Link from "next/link";
 export function Hero() {
   return (
     <section className="relative flex items-center justify-center w-full min-h-[100vh] overflow-hidden">
+      <div aria-live="polite" className="sr-only">
+        Welcome to Think Smarter Group, providing expert advisory services,
+        training and tech solutions for Education, Skills and Employability
+        Sectors
+      </div>
+
       <div className="flex flex-col items-center space-y-4 text-center">
         <div className="space-y-2">
           <h1
@@ -20,10 +26,10 @@ export function Hero() {
           </p>
         </div>
         <div className="space-x-4">
-          <Link href="#services">
+          <Link href="#services" aria-label="Learn about our services">
             <Button size="lg">Our Services</Button>
           </Link>
-          <Link href="#contact">
+          <Link href="#contact" aria-label="Contact Think Smarter Group">
             <Button variant="outline" size="lg">
               Contact Us
             </Button>
