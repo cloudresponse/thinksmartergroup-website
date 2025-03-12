@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   imageSrc: string;
   className?: string;
-  variants?: any;
+  variants?: Variants;
 }
 
 export function ServiceCard({

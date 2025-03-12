@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 interface TeamMemberProps {
   teamMember: TeamMember;
   className?: string;
-  variants?: any;
+  variants?: undefined;
 }
 
 export function TeamMember({

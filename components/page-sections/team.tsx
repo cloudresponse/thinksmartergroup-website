@@ -6,7 +6,6 @@ import ra from "@/app/images/profiles/ra.avif";
 import gj from "@/app/images/profiles/gj.jpg";
 import cf from "@/app/images/profiles/cf.jpg";
 import { motion } from "framer-motion";
-import { SectionHeader } from "../SectionHeader";
 
 const teamMembers: TeamMember[] = [
   {
@@ -54,8 +53,16 @@ const item = {
 
 export function Team() {
   return (
-    <section id="team" className="container mx-auto py-16">
-      <SectionHeader title="Our Team" />
+    <section id="team" className="relative container mx-auto py-16">
+      <motion.h2
+        variants={item}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="text-5xl font-bold text-center mb-16"
+      >
+        Our Team
+      </motion.h2>
 
       <motion.div
         variants={container}
