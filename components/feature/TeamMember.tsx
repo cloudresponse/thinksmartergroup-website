@@ -70,7 +70,9 @@ export function TeamMember({
 
       {role && <p className="text-lg text-gray-900">{role}</p>}
       {subtitle && <p className="text-lg text-gray-900">{subtitle}</p>}
-      <p className="text-gray-900 mt-2 flex-grow">{description}</p>
+      {description && (
+        <p className="text-gray-900 mt-2 flex-grow">{description}</p>
+      )}
     </div>
   );
 }

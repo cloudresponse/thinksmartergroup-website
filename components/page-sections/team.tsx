@@ -1,4 +1,4 @@
-import { TeamMember } from "@/components/feature/TeamMember";
+import { TeamMember as TeamMemberComponent } from "@/components/feature/TeamMember";
 import { type TeamMember } from "@/lib/interfaces/team";
 import ra from "@/app/images/profiles/ra.avif";
 import gj from "@/app/images/profiles/gj.jpg";
@@ -36,7 +36,7 @@ export function Team() {
 
       <div className="flex flex-wrap justify-center gap-12 max-w-5xl mx-auto">
         {teamMembers.map((member) => (
-          <TeamMember key={member.name} {...member} />
+          <TeamMemberComponent key={member.name} {...member} />
         ))}
       </div>
     </section>
