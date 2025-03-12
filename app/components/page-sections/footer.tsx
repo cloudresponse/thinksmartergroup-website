@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
+import { routes } from "@/lib/routes";
 
 const footerLinks = {
   company: [
@@ -39,13 +40,13 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4">Company</h4>
             <nav className="flex flex-col space-y-2">
-              {footerLinks.company.map((link) => (
+              {routes.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   className="text-sm text-muted-foreground hover:text-gray-100 transition-colors"
                 >
-                  {link.name}
+                  {link.label}
                 </Link>
               ))}
             </nav>

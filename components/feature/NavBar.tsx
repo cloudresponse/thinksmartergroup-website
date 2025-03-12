@@ -18,21 +18,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { useState } from "react";
-
-const routes = [
-  {
-    href: "/",
-    label: "Home",
-  },
-  {
-    href: "#services",
-    label: "Services",
-  },
-  {
-    href: "#customers",
-    label: "Customers",
-  },
-];
+import { routes } from "@/lib/routes";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);

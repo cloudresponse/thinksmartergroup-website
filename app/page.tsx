@@ -2,7 +2,6 @@ import { Hero } from "@/components/page-sections/hero";
 import { Services } from "@/components/page-sections/services";
 import { Team } from "@/components/page-sections/team";
 import { Contact } from "@/components/page-sections/contact";
-import { Footer } from "@/app/components/page-sections/footer";
 import { Metadata } from "next";
 import { Suspense } from "react";
 
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="space-y-24 py-16 sm:py-24">
           <Suspense
             fallback={<div className="h-screen animate-pulse bg-gray-100" />}
@@ -59,9 +58,9 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="mt-24">
+      {/* <footer className="mt-24">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
