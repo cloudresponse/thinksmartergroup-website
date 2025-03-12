@@ -8,7 +8,11 @@ export const routes = [
       label: "Services",
     },
     {
-      href: "#customers",
-      label: "Customers",
+      href: "#team",
+      label: "Our Team",
     },
+    // {
+    //   href: "#customers",
+    //   label: "Customers",
+    // },
   ];
