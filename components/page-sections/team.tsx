@@ -1,8 +1,12 @@
+"use client";
+
 import { TeamMember as TeamMemberComponent } from "@/components/feature/TeamMember";
 import { type TeamMember } from "@/lib/interfaces/team";
 import ra from "@/app/images/profiles/ra.avif";
 import gj from "@/app/images/profiles/gj.jpg";
 import cf from "@/app/images/profiles/cf.jpg";
+import { motion } from "framer-motion";
+import { SectionHeader } from "../SectionHeader";
 
 const teamMembers: TeamMember[] = [
   {
@@ -32,16 +36,38 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export function Team() {
   return (
     <section id="team" className="container mx-auto py-16">
-      <h2 className="text-5xl font-bold text-center mb-16">Our Team</h2>
+      <SectionHeader title="Our Team" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 py-12"
+      >
         {teamMembers.map((member) => (
           <TeamMemberComponent key={member.name} teamMember={member} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

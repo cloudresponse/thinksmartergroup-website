@@ -67,7 +67,7 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full max-w-2xl mx-auto space-y-8"
+        className="w-full max-w-2xl mx-auto space-y-8 mt-16"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <FormField
