@@ -18,9 +18,27 @@ const config: Config = {
       transitionProperty: {
         'transform': 'transform',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#6B7280',
+            p: {
+              marginTop: '1rem',
+              marginBottom: '1rem',
+            },
+            ul: {
+              marginTop: '1rem',
+              marginBottom: '1rem',
+            },
+            li: {
+              marginTop: '0.5rem',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 export default config; 

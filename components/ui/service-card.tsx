@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   imageSrc: string;
   className?: string;
+  href?: string;
+  hrefText?: string;
   variants?: Variants;
 }
 
@@ -19,12 +23,14 @@ export function ServiceCard({
   imageSrc,
   className,
   variants,
+  href,
+  hrefText,
 }: ServiceCardProps) {
   return (
     <motion.div variants={variants}>
       <Card
         className={cn(
-          "group relative overflow-hidden shadow-none transition-all duration-500 hover:shadow-xl hover:scale-[1.02] md:max-w-96 h-full",
+          "group relative overflow-hidden shadow-none transition-all duration-500 hover:shadow-xl hover:scale-[1.02] md:max-w-96 h-full flex flex-col",
           className
         )}
       >
@@ -37,10 +43,17 @@ export function ServiceCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-        <CardContent className="">
+        <CardContent className="flex-1">
           <CardTitle className="text-2xl font-semibold mb-2">{title}</CardTitle>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-muted-foreground text-sm">{description}</p>
         </CardContent>
+        {href && (
+          <CardFooter className="flex justify-between mt-auto">
+            <Link href={href} className="cursor-pointer">
+              <Button>{hrefText || "Learn More"}</Button>
+            </Link>
+          </CardFooter>
+        )}
       </Card>
     </motion.div>
   );

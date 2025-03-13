@@ -12,18 +12,21 @@ const services = [
     title: "Advisory Services",
     description:
       "Strategy consulting and investment advice on how to boost growth.",
+    href: "/services/#advisory",
     imageSrc: serviceImage01.src,
   },
   {
     title: "Product and Technology",
     description:
       "Prototyping and experimentation in order to learn fast about monetisation potential in a lean way.",
+    href: "/services/#product",
     imageSrc: serviceImage02.src,
   },
   {
     title: "Training and Assessment",
     description:
       "Get started on your Gen AI journey in the right way with our skills gap analysis and training offers.",
+    href: "/services/#training",
     imageSrc: serviceImage03.src,
   },
 ];
@@ -69,6 +72,7 @@ export function Services() {
             description={service.description}
             imageSrc={service.imageSrc}
             variants={item}
+            href={service.href}
           />
         ))}
       </motion.div>

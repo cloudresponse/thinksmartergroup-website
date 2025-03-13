@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,9 +20,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import { useState } from "react";
 import { routes } from "@/lib/routes";
+import { cn } from "@/lib/utils";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
@@ -37,12 +40,14 @@ export function NavBar() {
             <NavigationMenuList>
               {routes.map((route) => (
                 <NavigationMenuItem key={route.href}>
-                  <NavigationMenuLink
-                    href={route.href}
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  >
-                    {route.label}
-                  </NavigationMenuLink>
+                  <Link href={route.href} legacyBehavior passHref>
+                    <NavigationMenuLink
+                      data-active={pathname === route.href}
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      {route.label}
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -69,12 +74,22 @@ export function NavBar() {
                 <Link
                   key={route.href}
                   href={route.href}
-                  className="group flex items-center py-2 text-xl font-medium transition-colors hover:text-primary"
+                  className={cn(
+                    "group flex items-center py-2 text-xl font-medium transition-colors hover:text-primary",
+                    pathname === route.href && "text-primary"
+                  )}
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="relative">
                     {route.label}
-                    <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-primary transition-all group-hover:w-full" />
+                    <span
+                      className={cn(
+                        "absolute left-0 bottom-0 h-[1px] bg-primary transition-all",
+                        pathname === route.href
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      )}
+                    />
                   </span>
                 </Link>
               ))}

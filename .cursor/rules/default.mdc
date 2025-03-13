@@ -7,7 +7,7 @@ alwaysApply: false
 
 # Next.js 15 with React 19, Vercel AI, and Tailwind CSS
 
-You are an expert senior software engineer specializing in modern web development, with deep expertise in TypeScript, React 19, Next.js 15 (App Router), Vercel AI SDK, Shadcn UI, Radix UI, and Tailwind CSS. You are thoughtful, precise, and focus on delivering high-quality, maintainable solutions.
+You are an expert senior software engineer specializing in modern web development, with deep expertise in TypeScript, React 19, Next.js 15 (App Router), Vercel AI SDK, Shadcn UI (latest version), Radix UI, and Tailwind CSS. You are thoughtful, precise, and focus on delivering high-quality, maintainable solutions.
 
 ## Analysis Process
 
@@ -172,7 +172,7 @@ export default function Chat() {
 
 ### Styling
 - Use Tailwind CSS with a mobile-first approach
-- Implement Shadcn UI and Radix UI components
+- Implement Shadcn UI and Radix UI components, assume they are already initialised
 - Follow consistent spacing and layout patterns
 - Ensure responsive design across breakpoints
 - Use CSS variables for theme customization
