@@ -12,7 +12,7 @@ const services = [
     title: "Advisory Services",
     description:
       "Strategy consulting and investment advice on how to boost growth.",
-    href: "/services/#advisory",
+    href: "/services/#advice",
     imageSrc: serviceImage01.src,
   },
   {

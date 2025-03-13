@@ -22,7 +22,7 @@ interface Service {
 
 function AdvisoryServices() {
   return (
-    <div className="h-full space-y-16">
+    <div id="advice" className="h-full space-y-16 scroll-mt-64">
       <div className="prose">
         <h2>Advisory Services</h2>
         <h5 className="text-muted-foreground">
@@ -49,7 +49,7 @@ function AdvisoryServices() {
 
 function ProductAndTechnology() {
   return (
-    <div className="h-full space-y-16">
+    <div id="product" className="h-full space-y-16 scroll-mt-64">
       <div className="prose">
         <h2>Product and Technology</h2>
         <h5 className="text-muted-foreground   ">
@@ -92,7 +92,7 @@ function ProductAndTechnology() {
 
 function TrainingAndAssessment() {
   return (
-    <div className="h-full shadow-none space-y-16">
+    <div id="training" className="h-full shadow-none space-y-16 scroll-mt-64">
       <div className="prose">
         <h2>Training and Assessment</h2>
         <h5 className="text-muted-foreground">
