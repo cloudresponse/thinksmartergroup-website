@@ -40,19 +40,20 @@ export function NavBar() {
             <NavigationMenuList>
               {routes.map((route) => (
                 <NavigationMenuItem key={route.href}>
-                  <Link href={route.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      data-active={pathname === route.href}
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    >
+                  <NavigationMenuLink
+                    asChild
+                    data-active={pathname === route.href}
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    <Link href={route.href}>
                       {route.label}
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <Link href="#contact" className="cursor-">
+          <Link href="#contact" className="cursor-" >
             <Button size="sm">Contact Us</Button>
           </Link>
         </div>

@@ -45,7 +45,7 @@ export function Footer() {
                   key={link.href}
                   href={link.href}
                   className="text-sm text-muted-foreground hover:text-gray-100 transition-colors"
-                >
+                  legacyBehavior>
                   {link.label}
                 </Link>
               ))}
@@ -60,7 +60,7 @@ export function Footer() {
                   key={link.name}
                   href={link.href}
                   className="text-sm text-muted-foreground hover:text-gray-100 transition-colors"
-                >
+                  legacyBehavior>
                   {link.name}
                 </Link>
               ))}
@@ -78,7 +78,7 @@ export function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
+                      legacyBehavior>
                       <Icon className="h-4 w-4" />
                       <span className="sr-only">{social.name}</span>
                     </Link>

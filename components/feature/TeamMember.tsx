@@ -51,7 +51,7 @@ export function TeamMember({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
-                >
+                  >
                   <FaLinkedin className="w-5 h-5" />
                 </Link>
               )}
@@ -59,7 +59,7 @@ export function TeamMember({
                 <Link
                   href={`mailto:${email}`}
                   className="text-muted-foreground hover:text-primary transition-colors"
-                >
+                  >
                   <FaEnvelope className="w-5 h-5" />
                 </Link>
               )}
@@ -69,7 +69,7 @@ export function TeamMember({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
-                >
+                  >
                   <FaGlobe className="w-5 h-5" />
                 </Link>
               )}

@@ -9,7 +9,6 @@ export function Hero() {
         training and tech solutions for Education, Skills and Employability
         Sectors
       </div>
-
       <div className="flex flex-col items-center space-y-4 text-center">
         <div className="space-y-2">
           <h1
