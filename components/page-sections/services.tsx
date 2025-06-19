@@ -1,7 +1,7 @@
 "use client";
 
 import { ServiceCard } from "@/components/ui/service-card";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 import serviceImage01 from "@/app/images/christopher-burns-Kj2SaNHG-hg-unsplash.jpg";
 import serviceImage02 from "@/app/images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg";
@@ -44,7 +44,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } },
 };
 
 export function Services() {
