@@ -5,7 +5,7 @@ import { type TeamMember } from "@/lib/interfaces/team";
 import ra from "@/app/images/profiles/ra.avif";
 import gj from "@/app/images/profiles/gj.jpg";
 import cf from "@/app/images/profiles/cf.jpg";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 const teamMembers: TeamMember[] = [
   {
@@ -48,7 +48,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } },
 };
 
 export function Team() {
