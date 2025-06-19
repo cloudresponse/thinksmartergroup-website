@@ -82,7 +82,7 @@ export default function InvestmentsPage() {
               transition={{
                 delay: index * 0.1
               }}
-              className="w-full"
+              className="w-full h-64"
             >
               <InvestmentCard investment={investment} />
             </motion.div>
