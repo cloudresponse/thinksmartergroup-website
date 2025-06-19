@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { Investment, InvestmentCategory } from "@/lib/interfaces/investment";
+import { Card, CardContent, CardFooter } from "./ui/card";
+import { Investment } from "@/lib/interfaces/investment";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Separator } from "./ui/separator";
