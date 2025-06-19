@@ -61,7 +61,7 @@ export default function InvestmentsPage() {
                   onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
                   className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer
                     ${selectedCategory === category
-                      ? "bg-indigo-600 text-white border-indigo-600"
+                      ? "bg-black text-white border-black"
                       : "bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
                     }`}
                 >
@@ -72,7 +72,7 @@ export default function InvestmentsPage() {
           </div>
         </motion.div>
 
-        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {filteredInvestments.map((investment, index) => (
             <motion.div
               key={investment.title}

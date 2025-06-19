@@ -12,7 +12,7 @@ interface InvestmentCardProps {
 export default function InvestmentCard({ investment }: InvestmentCardProps) {
   return (
     <Link href={investment.href} target="_blank" rel="noopener noreferrer" className="w-full aspect-[3/2]">
-      <Card className="h-full w-full overflow-hidden bg-gray-700 shadow-none hover:shadow-md transition-all duration-300 hover:translate-y-[-5px] hover:bg-gray-700 group">
+      <Card className="h-full w-full overflow-hidden bg-black shadow-none hover:shadow-md transition-all duration-300 hover:translate-y-[-5px] hover:bg-gray-700 group">
         <CardContent className="h-full p-6 flex flex-col items-center justify-center relative">
           <Image
             src={investment.imageSrc}
