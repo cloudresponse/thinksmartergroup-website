@@ -219,7 +219,7 @@ export default function ServicesPage() {
 						<SectionHeader title="Our Services" />
 						<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
 							Expert advisory services, training and tech solutions, with a
-							focus on the education, skills and employability sectors
+							focus on the education, skills and employability sectors.
 						</p>
 					</div>
 				</motion.div>
