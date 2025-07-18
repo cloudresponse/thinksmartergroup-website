@@ -196,7 +196,7 @@ export const investments: Investment[] = [
 		title: "Polari Labs",
 		description:
 			"We believe the sexual wellness market needs to get over itself and finally start catering to all bodies, all orientations and all holes. It’s 2025 why is the butt still being left behind?",
-		href: "https://polari.com/",
+		href: "https://polarilabs.com/",
 		imageSrc: polariLogo.src,
 		category: InvestmentCategory.Healthcare,
 	},
