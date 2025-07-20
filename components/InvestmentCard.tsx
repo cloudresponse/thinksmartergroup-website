@@ -16,6 +16,7 @@ export default function InvestmentCard({ investment }: InvestmentCardProps) {
 			target="_blank"
 			rel="noopener noreferrer"
 			className="w-full aspect-[3/2]"
+			data-testid="investment-card"
 		>
 			<Card className="h-full w-full overflow-hidden bg-black shadow-none hover:shadow-md transition-all duration-300 hover:translate-y-[-5px] hover:bg-gray-700 group">
 				<CardContent className="h-full p-6 flex flex-col items-center justify-center relative">
