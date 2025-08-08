@@ -50,12 +50,7 @@ describe('Investments Data', () => {
     
     // Check that we have at least some categories represented
     expect(categoriesInData.size).toBeGreaterThan(0);
-    
-    // Log which categories are missing for debugging
-    const missingCategories = allCategories.filter(cat => !categoriesInData.has(cat));
-    if (missingCategories.length > 0) {
-      console.log('Missing categories:', missingCategories);
-    }
+
   });
 
   it('should have valid image sources', () => {
