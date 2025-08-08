@@ -1,7 +1,7 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
 // Mock Next.js router
-jest.mock('next/navigation', () => ({
+jest.mock("next/navigation", () => ({
   useRouter: () => ({
     push: jest.fn(),
     replace: jest.fn(),
@@ -11,21 +11,21 @@ jest.mock('next/navigation', () => ({
     refresh: jest.fn(),
   }),
   useSearchParams: () => new URLSearchParams(),
-  usePathname: () => '/',
+  usePathname: () => "/",
 }));
 
 // Mock Next.js image component
-jest.mock('next/image', () => ({
+jest.mock("next/image", () => ({
   __esModule: true,
-  default: 'img',
+  default: "img",
 }));
 
 // Mock framer-motion
-jest.mock('framer-motion', () => ({
+jest.mock("framer-motion", () => ({
   motion: {
-    div: 'div',
-    span: 'span',
-    button: 'button',
+    div: "div",
+    span: "span",
+    button: "button",
   },
   AnimatePresence: ({ children }: { children: unknown }) => children,
 }));
@@ -42,4 +42,4 @@ global.IntersectionObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),
   unobserve: jest.fn(),
   disconnect: jest.fn(),
-})); 
+}));

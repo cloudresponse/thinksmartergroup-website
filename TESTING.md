@@ -7,6 +7,7 @@ This document outlines the testing strategy and test coverage for the Think Smar
 ### Unit Tests (`__tests__/`)
 
 #### Components
+
 - **`__tests__/components/Button.test.tsx`** - Tests for the Button component
 - **`__tests__/components/InvestmentCard.test.tsx`** - Tests for the InvestmentCard component
   - Tests rendering of investment cards with correct content
@@ -16,6 +17,7 @@ This document outlines the testing strategy and test coverage for the Think Smar
   - Tests different investment categories
 
 #### Data and Interfaces
+
 - **`__tests__/lib/investments.test.ts`** - Tests for investments data integrity
   - Tests data loading and structure validation
   - Tests unique investment titles
@@ -35,6 +37,7 @@ This document outlines the testing strategy and test coverage for the Think Smar
 ### End-to-End Tests (`tests/e2e/`)
 
 #### Page Tests
+
 - **`tests/e2e/home.spec.ts`** - Tests for the home page
   - Page loading and navigation
   - Contact form functionality
@@ -58,6 +61,7 @@ This document outlines the testing strategy and test coverage for the Think Smar
 The investments functionality is thoroughly tested across multiple layers:
 
 #### 1. Data Layer Tests
+
 - **Data Integrity**: Ensures all investment data is valid and complete
 - **Structure Validation**: Verifies required fields (title, href, imageSrc, category)
 - **URL Validation**: Checks that all investment links are valid URLs
@@ -67,6 +71,7 @@ The investments functionality is thoroughly tested across multiple layers:
 - **Content Quality**: Validates description length and content
 
 #### 2. Component Tests
+
 - **InvestmentCard Component**: Tests individual investment card rendering
 - **Props Handling**: Tests component with and without optional fields
 - **Styling**: Verifies correct CSS classes and styling
@@ -74,12 +79,14 @@ The investments functionality is thoroughly tested across multiple layers:
 - **Interactive Elements**: Tests hover states and link functionality
 
 #### 3. Interface Tests
+
 - **Type Safety**: Ensures TypeScript interfaces are properly defined
 - **Enum Validation**: Tests InvestmentCategory enum values and structure
 - **Filtering Logic**: Tests category-based filtering functionality
 - **Data Transformation**: Tests grouping and sorting operations
 
 #### 4. End-to-End Tests
+
 - **Page Loading**: Tests complete page rendering and content display
 - **User Interactions**: Tests category filtering, hover effects, and navigation
 - **Responsive Design**: Tests functionality across different screen sizes
@@ -89,27 +96,32 @@ The investments functionality is thoroughly tested across multiple layers:
 ## Running Tests
 
 ### Unit Tests
+
 ```bash
 npm test
 ```
 
 ### Specific Test Files
+
 ```bash
 npm test -- --testPathPattern="investments"
 npm test -- --testPathPattern="InvestmentCard"
 ```
 
 ### End-to-End Tests
+
 ```bash
 npx playwright test
 ```
 
 ### Specific E2E Tests
+
 ```bash
 npx playwright test tests/e2e/investments.spec.ts
 ```
 
 ### Headed Mode (for debugging)
+
 ```bash
 npx playwright test tests/e2e/investments.spec.ts --headed
 ```
@@ -117,6 +129,7 @@ npx playwright test tests/e2e/investments.spec.ts --headed
 ## Test Data
 
 The tests use the actual investment data from `app/data/investments.ts`, ensuring that:
+
 - Tests reflect real-world data scenarios
 - Data changes are caught by tests
 - No mock data maintenance required
@@ -124,6 +137,7 @@ The tests use the actual investment data from `app/data/investments.ts`, ensurin
 ## Key Test Scenarios
 
 ### Investments Page
+
 1. **Initial Load**: Verifies all investments display correctly
 2. **Category Filtering**: Tests filtering by investment categories
 3. **Filter Clearing**: Tests clearing filters and returning to full list
@@ -133,6 +147,7 @@ The tests use the actual investment data from `app/data/investments.ts`, ensurin
 7. **State Management**: Tests filter state persistence
 
 ### Investment Cards
+
 1. **Content Display**: Tests title, description, and category display
 2. **Image Loading**: Tests image attributes and alt text
 3. **Link Functionality**: Tests external link behavior
@@ -142,6 +157,7 @@ The tests use the actual investment data from `app/data/investments.ts`, ensurin
 ## Continuous Integration
 
 Tests are designed to run in CI/CD pipelines and provide:
+
 - Fast execution times
 - Reliable results
 - Clear error messages
@@ -150,8 +166,9 @@ Tests are designed to run in CI/CD pipelines and provide:
 ## Future Enhancements
 
 Potential areas for additional testing:
+
 - Performance testing for large investment datasets
 - Accessibility testing with screen readers
 - Visual regression testing
 - API integration testing (if backend is added)
-- Load testing for concurrent users 
+- Load testing for concurrent users

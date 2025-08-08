@@ -223,7 +223,7 @@ export default function ServicesPage() {
             </p>
           </div>
         </motion.div>
-        .
+        {/* spacer removed */}
         <section
           id="services"
           className="relative w-full scroll-mt-16 pb-24 md:mt-48"
@@ -236,7 +236,7 @@ export default function ServicesPage() {
               viewport={{ once: true, margin: "-100px" }}
               className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 lg:gap-32"
             >
-              {services.map(service => (
+              {services.map((service) => (
                 <div key={service.title} className="contents">
                   <ServiceSection service={service} />
                 </div>

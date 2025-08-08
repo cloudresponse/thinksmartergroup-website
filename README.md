@@ -54,18 +54,20 @@ thinksmartergroup-website/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd thinksmartergroup-website
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    # or
@@ -74,11 +76,13 @@ thinksmartergroup-website/
 
 3. **Set up environment variables**
    Create a `.env.local` file in the root directory:
+
    ```env
    RESEND_API_KEY=your_resend_api_key_here
    ```
 
 4. **Run the development server**
+
    ```bash
    pnpm dev
    # or
@@ -98,11 +102,14 @@ thinksmartergroup-website/
 ## 🎨 Customization
 
 ### Styling
+
 The project uses Tailwind CSS with custom design tokens. Main styling configurations can be found in:
+
 - `tailwind.config.ts` - Tailwind configuration
 - `app/globals.css` - Global styles and CSS variables
 
 ### Content
+
 - **Services**: Edit `app/services/page.tsx` to modify service offerings
 - **Investments**: Update `app/data/investments.ts` to manage investment portfolio
 - **Team**: Modify team member data in the team section components
