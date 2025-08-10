@@ -26,7 +26,8 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="w-full bg-black text-white py-10 mt-48">
+    <footer className="w-full bg-gradient-to-b from-zinc-900 to-black text-white py-10 mt-48 relative">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <div className="px-4 md:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">

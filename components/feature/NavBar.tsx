@@ -25,12 +25,20 @@ export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [hash, setHash] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const updateHash = () => setHash(window.location.hash || "");
     updateHash();
     window.addEventListener("hashchange", updateHash);
     return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const isActive = (href: string) => {
@@ -41,7 +49,12 @@ export function NavBar() {
   };
 
   return (
-    <header className="fixed top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+    <header
+      className={cn(
+        "fixed top-0 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 transition-shadow",
+        scrolled && "shadow-sm",
+      )}
+    >
       <nav className="container flex h-16 items-center justify-between px-4 md:px-8 mx-auto">
         {/* Logo */}
         <Link href="/" className="font-semibold text-2xl tracking-tight">
@@ -62,6 +75,7 @@ export function NavBar() {
                     <Link
                       href={route.href}
                       aria-current={isActive(route.href) ? "page" : undefined}
+                      className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-foreground/60 after:transition-all group-hover:after:w-full"
                     >
                       {route.label}
                     </Link>
@@ -89,11 +103,7 @@ export function NavBar() {
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent
-            id="mobile-menu"
-            side="right"
-            className="w-[300px] sm:w-[400px]"
-          >
+          <SheetContent id="mobile-menu" side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
               <SheetTitle>Think Smarter Group</SheetTitle>
             </SheetHeader>
@@ -109,16 +119,8 @@ export function NavBar() {
                   aria-current={isActive(route.href) ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
                 >
-                  <span className="relative">
+                  <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-foreground/60 after:transition-all group-hover:after:w-full">
                     {route.label}
-                    <span
-                      className={cn(
-                        "absolute left-0 bottom-0 h-[1px] bg-primary transition-all",
-                        pathname === route.href
-                          ? "w-full"
-                          : "w-0 group-hover:w-full",
-                      )}
-                    />
                   </span>
                 </Link>
               ))}

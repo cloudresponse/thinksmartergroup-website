@@ -20,7 +20,7 @@ export function SectionHeader({ title }: SectionHeaderProps) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center"
+      className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-center bg-clip-text text-transparent bg-gradient-to-b from-black to-zinc-600 dark:from-white dark:to-zinc-400"
     >
       {title}
     </motion.h2>
