@@ -14,4 +14,5 @@ export enum InvestmentCategory {
   ProfessionalServices = "Professional Services",
   Retail = "Retail",
   Rollups = "Rollups",
+  Fintech = "Fintech",
 }

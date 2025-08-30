@@ -20,6 +20,7 @@ import starshipLogo from "@/app/images/investment-logos/starship-logo.svg";
 import thermologyHealthLogo from "@/app/images/investment-logos/thermologyhealth-logo.webp";
 import unSchoolLogo from "@/app/images/investment-logos/unschool-logo.png";
 import yolkLogo from "@/app/images/investment-logos/yolk-logo.webp";
+import generationHomeLogo from "@/app/images/investment-logos/generationhome-logo.svg";
 
 import {
   type Investment,
@@ -199,5 +200,13 @@ export const investments: Investment[] = [
     href: "https://polarilabs.com/",
     imageSrc: polariLogo.src,
     category: InvestmentCategory.Healthcare,
+  },
+  {
+    title: "Generation Home",
+    description:
+      "Unlocking home­ownership for everyone",
+    href: "https://www.generationhome.com/",
+    imageSrc: generationHomeLogo.src,
+    category: InvestmentCategory.Fintech,
   },
 ];
