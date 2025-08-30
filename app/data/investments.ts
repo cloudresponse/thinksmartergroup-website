@@ -203,8 +203,7 @@ export const investments: Investment[] = [
   },
   {
     title: "Generation Home",
-    description:
-      "Unlocking home­ownership for everyone",
+    description: "Unlocking home­ownership for everyone",
     href: "https://www.generationhome.com/",
     imageSrc: generationHomeLogo.src,
     category: InvestmentCategory.Fintech,
