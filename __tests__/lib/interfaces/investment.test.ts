@@ -11,6 +11,7 @@ describe("Investment Interface", () => {
         "Professional Services",
         "Retail",
         "Rollups",
+        "Fintech",
       ];
 
       const actualCategories = Object.values(InvestmentCategory);
