@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("Home Page", () => {
   test("should load the home page", async ({ page }) => {
@@ -11,22 +11,38 @@ test.describe("Home Page", () => {
   test("should display navigation menu", async ({ page }) => {
     await page.goto("/");
 
-    // Check that navigation elements are present
-    await expect(page.getByRole("navigation")).toBeVisible();
-    await expect(page.getByRole("link", { name: /services/i })).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: /investments/i }),
-    ).toBeVisible();
+    // Check that at least one primary navigation is present (avoid strict mode by selecting first)
+    const primaryNav = page.getByRole("navigation").first();
+    await expect(primaryNav).toBeVisible();
+    let servicesLink = page.locator('a[href="/services"]:visible').first();
+    if (!(await servicesLink.isVisible())) {
+      const menuButton = page.getByRole("button", { name: /open menu/i });
+      if (await menuButton.isVisible()) {
+        await menuButton.click();
+      }
+      servicesLink = page.locator('a[href="/services"]:visible').first();
+    }
+    await expect(servicesLink).toBeVisible();
+    const investmentsLink = page.locator('a[href="/investments"]:visible').first();
+    await expect(investmentsLink).toBeVisible();
   });
 
   test("should navigate to services page", async ({ page }) => {
     await page.goto("/");
 
-    // Click on services link
-    await page.getByRole("link", { name: /services/i }).click();
+    // Ensure services link is visible (open mobile menu if needed)
+    let servicesLink = page.locator('a[href="/services"]:visible').first();
+    if (!(await servicesLink.isVisible())) {
+      const menuButton = page.getByRole("button", { name: /open menu/i });
+      if (await menuButton.isVisible()) {
+        await menuButton.click();
+      }
+      servicesLink = page.locator('a[href="/services"]:visible').first();
+    }
+    await servicesLink.click();
 
     // Verify navigation to services page
-    await expect(page).toHaveURL(/.*services/);
+    await expect(page).toHaveURL(/.*\/services/);
   });
 
   test("should display contact form", async ({ page }) => {
@@ -40,7 +56,8 @@ test.describe("Home Page", () => {
     // Check that contact form elements are present
     await expect(page.getByLabel(/name/i)).toBeVisible();
     await expect(page.getByLabel(/email/i)).toBeVisible();
-    await expect(page.getByRole("button", { name: /send/i })).toBeVisible();
+    // Current button label is "Submit"
+    await expect(page.getByRole("button", { name: /submit/i })).toBeVisible();
   });
 
   test("should be responsive on mobile", async ({ page }) => {
@@ -48,8 +65,8 @@ test.describe("Home Page", () => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto("/");
 
-    // Check that mobile navigation works
-    await expect(page.getByRole("navigation")).toBeVisible();
+    // Check that at least one navigation landmark is visible
+    await expect(page.getByRole("navigation").first()).toBeVisible();
 
     // Verify content is readable on mobile
     await expect(page.getByRole("main")).toBeVisible();

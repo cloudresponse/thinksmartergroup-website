@@ -37,7 +37,7 @@ export default function Home() {
       {/* Subtle pattern overlay for the entire page */}
       {/* <div className="fixed inset-0 opacity-[0.2] bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] -z-10"></div> */}
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="region" aria-label="Home page content">
         <div className="flex flex-col">
           <Suspense
             fallback={<div className="h-screen animate-pulse bg-gray-100" />}
@@ -79,7 +79,7 @@ export default function Home() {
             </section>
           </Suspense>
         </div>
-      </main>
+  </div>
     </div>
   );
 }

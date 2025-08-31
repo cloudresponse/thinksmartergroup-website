@@ -208,7 +208,7 @@ export default function ServicesPage() {
       {/* Main gradient background */}
       <div className="fixed inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-indigo-50 dark:from-gray-900 dark:via-gray-900 dark:to-indigo-950 -z-10" />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-40">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-40" role="region" aria-label="Services page content">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -245,7 +245,7 @@ export default function ServicesPage() {
           </div>
         </section>
         <Contact />
-      </main>
+  </div>
     </div>
   );
 }
