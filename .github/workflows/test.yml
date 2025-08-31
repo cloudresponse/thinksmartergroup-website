@@ -8,8 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  unit-tests:
+  jest-tests:
     runs-on: ubuntu-latest
+    env:
+      DISABLE_EMAIL_SENDING: true
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -28,9 +30,10 @@ jobs:
       - name: Run unit tests
         run: pnpm test
 
-  e2e-tests:
+  playwright-tests:
     runs-on: ubuntu-latest
-    needs: unit-tests
+    env:
+      DISABLE_EMAIL_SENDING: true
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm

@@ -3,13 +3,22 @@
 import { Resend } from "resend";
 import ContactFormEmail from "@/components/email/contact-form-email";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const isEmailDisabled =
+  process.env.DISABLE_EMAIL_SENDING === "true" || process.env.NODE_ENV === "test";
+
+const resend = !isEmailDisabled && process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 export async function sendEmail(formData: {
   name: string;
   email: string;
   message: string;
 }) {
+  if (isEmailDisabled) {
+    return { success: true, skipped: true } as const;
+  }
+
   if (!process.env.RESEND_API_KEY) {
     throw new Error("Missing RESEND_API_KEY environment variable");
   }
@@ -19,6 +28,9 @@ export async function sendEmail(formData: {
   }
 
   try {
+    if (!resend) {
+      throw new Error("Email client not initialized");
+    }
     const data = await resend.emails.send({
       from: "Think Smarter Group <hello@thinksmartergroup.com>",
       to: [process.env.CONTACT_EMAIL],
