@@ -23,26 +23,25 @@ test.describe("Home Page", () => {
       servicesLink = page.locator('a[href="/services"]:visible').first();
     }
     await expect(servicesLink).toBeVisible();
-    const investmentsLink = page.locator('a[href="/investments"]:visible').first();
+    const investmentsLink = page
+      .locator('a[href="/investments"]:visible')
+      .first();
     await expect(investmentsLink).toBeVisible();
   });
 
   test("should navigate to services page", async ({ page }) => {
     await page.goto("/");
+    const servicesLink = page.locator('a[href="/services"]:visible').first();
+    await expect(servicesLink).toBeVisible();
 
-    // Ensure services link is visible (open mobile menu if needed)
-    let servicesLink = page.locator('a[href="/services"]:visible').first();
-    if (!(await servicesLink.isVisible())) {
-      const menuButton = page.getByRole("button", { name: /open menu/i });
-      if (await menuButton.isVisible()) {
-        await menuButton.click();
-      }
-      servicesLink = page.locator('a[href="/services"]:visible').first();
-    }
-    await servicesLink.click();
+    await Promise.all([
+      page.waitForURL(/\/services$/), // starts waiting before click
+      servicesLink.click(),
+    ]);
 
-    // Verify navigation to services page
-    await expect(page).toHaveURL(/.*\/services/);
+    await expect(
+      page.getByRole("region", { name: "Services page content" })
+    ).toBeVisible();
   });
 
   test("should display contact form", async ({ page }) => {
