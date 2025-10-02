@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { routes } from "@/lib/routes";
 
+// @ts-ignore
 const footerLinks = {
   company: [
     { name: "About Us", href: "/about" },
