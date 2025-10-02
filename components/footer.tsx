@@ -1,28 +1,15 @@
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { Separator } from "@/components/ui/separator";
 import { routes } from "@/lib/routes";
+import { Button } from "./ui/button";
 
-// @ts-ignore
-const footerLinks = {
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
-  ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" },
-  ],
-  social: [
-    { name: "LinkedIn", icon: FaLinkedin, href: "https://linkedin.com" },
-    { name: "Twitter", icon: FaTwitter, href: "https://twitter.com" },
-    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com" },
-    { name: "Instagram", icon: FaInstagram, href: "https://instagram.com" },
-  ],
-};
+const socialLinks = [
+    { name: "LinkedIn", icon: FaLinkedin, href: "https://www.linkedin.com/company/think-smarter-group/" },
+    // { name: "Twitter", icon: FaTwitter, href: "https://twitter.com" },
+    // { name: "Facebook", icon: FaFacebook, href: "https://facebook.com" },
+    // { name: "Instagram", icon: FaInstagram, href: "https://instagram.com" },
+];
 
 export function Footer() {
   return (
@@ -40,7 +27,7 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4">Company</h4>
             <nav className="flex flex-col space-y-2">
-              {routes.map((link) => (
+              {routes.map(link => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -52,41 +39,26 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* <div>
-            <h4 className="text-sm font-semibold mb-4">Legal</h4>
-            <nav className="flex flex-col space-y-2">
-              {footerLinks.legal.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-gray-100 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-          </div> */}
-
-          {/* <div>
+          <div>
             <h4 className="text-sm font-semibold mb-4">Connect With Us</h4>
             <div className="flex space-x-4">
-              {footerLinks.social.map(social => {
-                const Icon = social.icon;
+              {socialLinks.map(({name, icon, href}) => {
+                const Icon = icon;
                 return (
-                  <Button key={social.name} variant="ghost" size="icon" asChild>
+                  <Button key={name} variant="ghost" size="icon" asChild>
                     <Link
-                      href={social.href}
+                      href={href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Icon className="h-4 w-4" />
-                      <span className="sr-only">{social.name}</span>
+                      <span className="sr-only">{name}</span>
                     </Link>
                   </Button>
                 );
               })}
             </div>
-          </div> */}
+          </div>
         </div>
 
         <Separator className="my-8" />
