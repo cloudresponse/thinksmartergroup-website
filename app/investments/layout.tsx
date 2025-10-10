@@ -12,6 +12,30 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: "Investments - Think Smarter Group",
+    description:
+      "Explore Think Smarter Group's portfolio of early-stage investments across education, skills, and employability sectors.",
+    url: "https://thinksmartergroup.com/investments",
+    type: "website",
+    images: [
+      {
+        url: "https://thinksmartergroup.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Think Smarter Group Investments",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Investments - Think Smarter Group",
+    description:
+      "Explore Think Smarter Group's portfolio of early-stage investments across education, skills, and employability sectors.",
+    images: [
+      "https://thinksmartergroup.com/opengraph-image",
+    ],
+  },
 };
 
 export default function InvestmentsLayout({
