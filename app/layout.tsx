@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Think Smarter Group - Innovation & Technology Solutions",
+  title: "Think Smarter Group",
   description:
     "Expert advisory services, training and tech solutions, with a focus on the education, skills and employability sectors.",
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     canonical: "https://thinksmartergroup.com",
   },
   openGraph: {
-    title: "Think Smarter Group - Innovation & Technology Solutions",
+    title: "Think Smarter Group",
     description:
       "Expert advisory services, training and tech solutions, with a focus on the education, skills and employability sectors.",
     url: "https://thinksmartergroup.com",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Think Smarter Group - Innovation & Technology Solutions",
+    title: "Think Smarter Group",
     description:
       "Expert advisory services, training and tech solutions, with a focus on the education, skills and employability sectors.",
     images: ["https://thinksmartergroup.com/opengraph-image"],
