@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Think Smarter Group - Innovation & Technology Solutions",
   description:
-    "Professional technology solutions and consulting services for modern businesses. Expert advisory, training and tech solutions for Education, Skills and Employability Sectors.",
+    "Expert advisory services, training and tech solutions, with a focus on the education, skills and employability sectors.",
   keywords: [
     "technology solutions",
     "business consulting",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Think Smarter Group - Innovation & Technology Solutions",
     description:
-      "Professional technology solutions and consulting services for modern businesses. Expert advisory, training and tech solutions for Education, Skills and Employability Sectors.",
+      "Expert advisory services, training and tech solutions, with a focus on the education, skills and employability sectors.",
     url: "https://thinksmartergroup.com",
     siteName: "Think Smarter Group",
     locale: "en_GB",
@@ -60,10 +60,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Think Smarter Group - Innovation & Technology Solutions",
     description:
-      "Professional technology solutions and consulting services for modern businesses. Expert advisory, training and tech solutions for Education, Skills and Employability Sectors.",
-    images: [
-      "https://thinksmartergroup.com/opengraph-image",
-    ],
+      "Expert advisory services, training and tech solutions, with a focus on the education, skills and employability sectors.",
+    images: ["https://thinksmartergroup.com/opengraph-image"],
   },
 };
 
@@ -79,9 +77,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Think Smarter Group",
     url: baseUrl,
-    sameAs: [
-      "https://www.linkedin.com/company/think-smarter-group/",
-    ],
+    sameAs: ["https://www.linkedin.com/company/think-smarter-group/"],
     logo: `${baseUrl}/favicon.ico`,
   };
 
@@ -89,11 +85,11 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
     name: routes
-      .filter((r) => r.href.startsWith("/") && !r.href.includes("#"))
-      .map((r) => r.label),
+      .filter(r => r.href.startsWith("/") && !r.href.includes("#"))
+      .map(r => r.label),
     url: routes
-      .filter((r) => r.href.startsWith("/") && !r.href.includes("#"))
-      .map((r) => `${baseUrl}${r.href}`),
+      .filter(r => r.href.startsWith("/") && !r.href.includes("#"))
+      .map(r => `${baseUrl}${r.href}`),
   };
 
   return (
@@ -106,13 +102,17 @@ export default function RootLayout({
           id="organization-jsonld"
           type="application/ld+json"
           strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
         <Script
           id="sitenav-jsonld"
           type="application/ld+json"
           strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteNavigationJsonLd),
+          }}
         />
         <a
           href="#main"
@@ -121,7 +121,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <NavBar />
-        <main id="main">{children}</main>
+        <main id="main"> {children} </main>
         <Footer />
         <Toaster />
         <Analytics />
