@@ -44,14 +44,13 @@ export default function Image() {
             maxWidth: 900,
           }}
         >
-          Innovation & Technology Solutions
+          Expert advisory services, training and tech solutions, with a focus on
+          the education, skills and employability sectors.
         </div>
       </div>
     ),
     {
       ...size,
-    },
+    }
   );
 }
-
-
